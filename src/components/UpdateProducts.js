@@ -3,17 +3,18 @@ import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 
 
 const UpdateProducts = () => {
-    const products = useLoaderData();
+const {products} = useLoaderData();
+    console.log(products);
     const {id} = useParams();
     const navigate = useNavigate();
     const [selectProduct , setSelectProduct] = useState({})
-    // console.log(products);
+    console.log(products);
     
     useEffect(()=>{
         const currentProduct = products.find(product =>product._id === id)
       setSelectProduct(currentProduct);
     },[id,products])
-    // console.log(selectProduct);
+    console.log(selectProduct);
     
     const {name,photoLink,price} = selectProduct;
 
@@ -25,7 +26,7 @@ const UpdateProducts = () => {
             price : e.target.price.value,
             photoLink : e.target.photoLink.value,
         }
-        fetch(`http://localhost:5000/products`,{
+        fetch(`https://amar-bazzar-server-arifbiswas.vercel.app/products`,{
             method: 'PATCH',
             headers:{
                 authtoken : localStorage.getItem('authtoken'),

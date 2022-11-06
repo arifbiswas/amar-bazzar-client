@@ -13,7 +13,7 @@ export default function Login() {
     // console.log(email ,password);
     loginUser(email,password)
     .then( result =>{
-      const user = result.user;
+      // const user = result.user;
       // console.log(user);
     
       const currentUser ={
@@ -21,7 +21,7 @@ export default function Login() {
         password
       }
       // console.log(user);
-      fetch('http://localhost:5000/jwt',{
+      fetch('https://amar-bazzar-server-arifbiswas.vercel.app/jwt',{
         method:"post",
         headers:{
           "content-type":"application/json"

@@ -14,14 +14,14 @@ const Register = () => {
     const {email , password} = data;
     createUser(email , password)
     .then(result =>{
-      const user = result.user;
+      // const user = result.user;
       navigate('/')
       const currentUser ={
         email ,
         password
       }
       // console.log(user);
-      fetch('http://localhost:5000/jwt',{
+      fetch('https://amar-bazzar-server-arifbiswas.vercel.app/jwt',{
         method:"post",
         headers:{
           "content-type":"application/json"

@@ -17,15 +17,15 @@ const Header = () => {
   }
 
   return (
-    <div className="navbar bg-base-100 container mx-auto">
+    <div className="navbar bg-base-100 container mx-auto ">
       <div className="flex-1">
         {
           user?.email ? <h2 href="#" className="btn btn-ghost normal-case text-rose-500 text-4xl">Dashboard</h2>:<h2 href="#" className="btn btn-ghost normal-case text-rose-500 text-4xl">Amar Bazzar</h2>
         }
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal p-0">
-          <li>
+        <ul className="menu menu-horizontal p-0  ">
+          <li className="">
            {
             user?.email && <button> <Link to='/'>Home</Link></button>
            }

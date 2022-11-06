@@ -41,9 +41,9 @@ const router = createBrowserRouter([
             {
                 path:'/updateProducts/:id',
                 element:<PrivateRoute><UpdateProducts></UpdateProducts></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5000/products',{
-                    headers :{
-                        authtoken :"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im14Z2FuZ3N0YXIzMTBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJhcmlmYmlzd2FzIiwiaWF0IjoxNjY3NjIxODY4fQ.KDf0xzEXU4Y58gu9Uu5IdnfT1muxnSKio2Lx969lUvc"
+                loader: ()=> fetch('https://amar-bazzar-server-arifbiswas.vercel.app/products',{
+                    headers :{ 
+                        authtoken: localStorage.getItem("authtoken")
                     }
                 })
             },

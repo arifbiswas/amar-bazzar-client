@@ -8,7 +8,7 @@ const AddProducts = () => {
             price : e.target.price.value,
             photoLink : e.target.photoLink.value,
         }
-        fetch('http://localhost:5000/products',{
+        fetch('https://amar-bazzar-server-arifbiswas.vercel.app/products',{
             method: 'POST',
             headers:{
                 "content-type":"application/json"

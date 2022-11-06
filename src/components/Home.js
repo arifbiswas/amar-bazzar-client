@@ -11,14 +11,14 @@ const Home = () => {
   const [currentPage ,setCurrentPage] = useState(0)
   const pages = Math.ceil(count / perPage);
   useEffect(() => {
-    fetch(`http://localhost:5000/products?perPage=${perPage}&currentPage=${currentPage}`, {
+    fetch(`https://amar-bazzar-server-arifbiswas.vercel.app/products?perPage=${perPage}&currentPage=${currentPage}`, {
       headers: {
         authtoken: localStorage.getItem("authtoken"),
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setProducts(data.products)
         setCout(data.count)
       });
@@ -28,7 +28,7 @@ const Home = () => {
   const navigate = useNavigate();
   const handleDelete = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://amar-bazzar-server-arifbiswas.vercel.app/products/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -52,7 +52,7 @@ const Home = () => {
 
   return (
     
-    <div className=" w-full container mx-auto">
+    <div className=" w-full container mx-auto ">
       
       <table className="table w-full my-12">
         <thead>
@@ -94,8 +94,7 @@ const Home = () => {
         </tbody>
       </table>
       <div className=" flex justify-center">
-       <p>page Count {count}</p>
-       <p>selected {currentPage}</p>
+      
        {
         [...Array(pages).keys()].map(number =><button 
           onClick={()=>setCurrentPage(number )}
