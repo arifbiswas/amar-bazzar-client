@@ -27,8 +27,8 @@ const AddProducts = () => {
     }
     return (
         <div>
-            <div className='bg-gray-300 w-full h-[100vh] mx-auto p-12 rounded-md'>
-            <h1 className='text-5xl my-8'>Add Products</h1>
+            <div className='w-full h-[100vh] mx-auto p-12 rounded-md'>
+            <h2 className='text-5xl my-8'>Add Products</h2>
             <form onSubmit={handleAddProducts}>
             <input type="name" name='name' placeholder="name" className="input input-bordered input-primary w-full
              my-5" />
